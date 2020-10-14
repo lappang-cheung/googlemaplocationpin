@@ -1,26 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react'
+import GoogleMapSection from './GoogleMapSection'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+
+  state = {
+    searchLat: 43.653225,
+    searchLng: -79.383186 
+  }
+
+  handleSearchLat = lat => {
+    this.setState({
+      searchLat: lat
+    })
+  }
+
+  handleSearchLng = lng => {
+    this.setState({
+      searchLng: lng
+    })
+  }
+
+  render() {
+
+    const { searchLat, searchLng} = this.state
+
+    return (
+      <div>
+        <GoogleMapSection
+          searchLat={searchLat}
+          searchLng={searchLng}
+          handleSearchLat={this.handleSearchLat}
+          handleSearchLng={this.handleSearchLng}
+        />
+        </div>
+    )
+  }
 }
 
-export default App;
+export default App
