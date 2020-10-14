@@ -38,7 +38,7 @@ const GoogleMapSection = ({ searchLat,
   }
 
   const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: 'AIzaSyDnCkNAk5J0x61NEITiZBiG4G5OXwBpk8c',
+    googleMapsApiKey: 'GOOGLE API KEY',
     libraries
   })
 
